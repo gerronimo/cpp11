@@ -14,7 +14,8 @@ int main()
     vector<thread> workers;
     for(int i=0; i<thread_num; ++i)
     {
-        workers.push_back(thread(&thFun, i));
+        auto th = thread(&thFun, i);
+        workers.push_back(move(th));
         
         
     }
