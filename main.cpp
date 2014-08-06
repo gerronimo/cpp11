@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 using namespace std;
+static const int thread_num = 10;
 
 void call_from_thread()
 {
@@ -8,7 +9,11 @@ void call_from_thread()
 }
 int main()
 {
-    thread t(call_from_thread);
-    t.join();
+    thread t[thread_num];
+    for(int i=0; i<thread_num; ++i)
+    {
+        t[i] = thread(call_from_thread);
+    }
+    for(int i=0; i<thread_num; ++i) { t[i].join(); }
     return 0;
 }
