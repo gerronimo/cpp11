@@ -3,10 +3,6 @@
 using namespace std;
 static const int thread_num = 10;
 
-void call_from_thread()
-{
-    cout << "hello from thread" << endl;    
-}
 int main()
 {
     thread t[thread_num];
