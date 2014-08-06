@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 using namespace std;
+<<<<<<< HEAD
 
  class ppm {
         bool flag_alloc;
@@ -35,6 +36,8 @@ using namespace std;
     };
 
 static const int thread_num = 10;
+=======
+>>>>>>> parent of 734be4b... added more threads
 
 void call_from_thread(int tid)
 {
@@ -42,11 +45,16 @@ void call_from_thread(int tid)
 }
 int main()
 {
+<<<<<<< HEAD
     thread t[thread_num];
     for(int i=0; i<thread_num; ++i)
     {
         t[i] = thread(call_from_thread, i);
     }
     for(int i=0; i<thread_num; ++i) { t[i].join(); }
+=======
+    thread t(call_from_thread);
+    t.join();
+>>>>>>> parent of 734be4b... added more threads
     return 0;
 }
