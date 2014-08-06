@@ -1,2 +1,2 @@
 target: 
-	g++ main.cpp -std=c++0x
+	g++ -g -pthread main.cpp -std=c++0x
